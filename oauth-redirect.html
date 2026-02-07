@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <title>ログイン完了</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const code = params.get('code');
+
+    if (code) {
+      window.location.href =
+        'com.kyanagiuag.komogu://login-callback?code=' +
+        encodeURIComponent(code);
+    } else {
+      document.body.innerText = '認証に失敗しました';
+    }
+  </script>
+</head>
+<body>
+  <p>ログイン処理中です…</p>
+</body>
+</html>
